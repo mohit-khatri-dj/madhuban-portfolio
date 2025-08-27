@@ -644,7 +644,8 @@ select.form-control {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(var(--color-surface), 0.95);
+  background-color: var(--color-surface);
+  opacity: 0.95; 
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   transition: all var(--duration-normal) var(--ease-standard);
@@ -674,9 +675,7 @@ select.form-control {
   padding: 0;
   gap: var(--space-32);
 }
-.nav-menu-item {
-  /* for possible future styling */
-}
+
 
 /* Mobile sidebar styles */
 .mobile-sidebar {
@@ -701,9 +700,7 @@ select.form-control {
   flex-direction: column;
   gap: 2rem;
 }
-.mobile-sidebar li {
-  /* for spacing */
-}
+
 .mobile-sidebar .nav-link {
   font-size: 1.2rem;
   color: var(--color-text);
@@ -1449,5 +1446,11 @@ html {
   }
   .mobile-sidebar {
     display: flex;
+  }
+  .social-links {
+    display: flex;
+    gap: var(--space-16);
+    justify-content: center;   /* centers items horizontally */
+    width: 100%;               /* ensures the flex row can center within its parent */
   }
 }
