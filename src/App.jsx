@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      console.log("Scroll Position:", scrollPosition  );
       
       const sections = ['hero', 'skills', 'projects', 'experience', 'contact'];
       

@@ -36,12 +36,14 @@ function Navigation({ activeSection, setActiveSection }) {
         <button 
           className="nav-toggle"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Open menu"
         >
           <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+        {/* Desktop menu */}
+        <ul className="nav-menu">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="nav-menu-item">
               <a
                 href={`#${item.id}`}
                 className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
@@ -55,6 +57,27 @@ function Navigation({ activeSection, setActiveSection }) {
             </li>
           ))}
         </ul>
+        {/* Mobile sidebar */}
+        <div className={`mobile-sidebar${isMenuOpen ? ' open' : ''}`}>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Overlay for sidebar */}
+        {isMenuOpen && <div className="sidebar-overlay" onClick={() => setIsMenuOpen(false)}></div>}
       </div>
     </nav>
   );

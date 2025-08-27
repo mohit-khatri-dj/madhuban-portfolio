@@ -637,107 +637,6 @@ select.form-control {
   }
 }
 
-/* Utility classes */
-.flex {
-  display: flex;
-}
-.flex-col {
-  flex-direction: column;
-}
-.items-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-between {
-  justify-content: space-between;
-}
-.gap-4 {
-  gap: var(--space-4);
-}
-.gap-8 {
-  gap: var(--space-8);
-}
-.gap-16 {
-  gap: var(--space-16);
-}
-
-.m-0 {
-  margin: 0;
-}
-.mt-8 {
-  margin-top: var(--space-8);
-}
-.mb-8 {
-  margin-bottom: var(--space-8);
-}
-.mx-8 {
-  margin-left: var(--space-8);
-  margin-right: var(--space-8);
-}
-.my-8 {
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-8);
-}
-
-.p-0 {
-  padding: 0;
-}
-.py-8 {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
-}
-.px-8 {
-  padding-left: var(--space-8);
-  padding-right: var(--space-8);
-}
-.py-16 {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
-}
-.px-16 {
-  padding-left: var(--space-16);
-  padding-right: var(--space-16);
-}
-
-.block {
-  display: block;
-}
-.hidden {
-  display: none;
-}
-
-/* Accessibility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: 2px;
-}
-
-/* Dark mode specifics */
-[data-color-scheme="dark"] .btn--outline {
-  border: 1px solid var(--color-border-secondary);
-}
-
-@font-face {
-  font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-    format('woff2');
-}
-
-/* END PERPLEXITY DESIGN SYSTEM */
 /* Navigation */
 .navbar {
   position: fixed;
@@ -775,28 +674,124 @@ select.form-control {
   padding: 0;
   gap: var(--space-32);
 }
-
-.nav-link {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  transition: color var(--duration-fast) var(--ease-standard);
+.nav-menu-item {
+  /* for possible future styling */
 }
 
-.nav-link:hover,
-.nav-link.active {
+/* Mobile sidebar styles */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100vh;
+  background: var(--color-surface);
+  box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+  z-index: 2001;
+  transition: right 0.3s var(--ease-standard);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 24px 24px 24px;
+}
+.mobile-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mobile-sidebar li {
+  /* for spacing */
+}
+.mobile-sidebar .nav-link {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+.mobile-sidebar .nav-link.active {
   color: var(--color-primary);
 }
+.mobile-sidebar.open {
+  right: 0;
+}
 
+/* Overlay for sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  z-index: 2000;
+}
+
+/* Navigation toggle button (hamburger) */
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: var(--font-size-xl);
+  font-size: 2rem;
   color: var(--color-text);
   cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  z-index: 2100;
+}
+.nav-toggle:focus,
+.nav-toggle:hover {
+  background: var(--color-secondary);
+  outline: none;
 }
 
+/* Responsive: hide desktop menu, show hamburger and sidebar on mobile */
+@media (max-width: 900px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+    position: relative;
+  }
+  .mobile-sidebar {
+    display: flex;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Dark mode specifics */
+[data-color-scheme="dark"] .btn--outline {
+  border: 1px solid var(--color-border-secondary);
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
+}
+
+/* END PERPLEXITY DESIGN SYSTEM */
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -1320,4 +1315,139 @@ html {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* Dark mode specifics */
+[data-color-scheme="dark"] .btn--outline {
+  border: 1px solid var(--color-border-secondary);
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
+}
+
+/* END PERPLEXITY DESIGN SYSTEM */
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(var(--color-surface), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.nav-container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-32);
+}
+.nav-menu-item {
+  /* for possible future styling */
+}
+
+/* Mobile sidebar styles */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100vh;
+  background: var(--color-surface);
+  box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+  z-index: 2001;
+  transition: right 0.3s var(--ease-standard);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 24px 24px 24px;
+}
+.mobile-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mobile-sidebar li {
+  /* for spacing */
+}
+.mobile-sidebar .nav-link {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+.mobile-sidebar .nav-link.active {
+  color: var(--color-primary);
+}
+.mobile-sidebar.open {
+  right: 0;
+}
+
+/* Overlay for sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  z-index: 2000;
+}
+
+/* Navigation toggle button (hamburger) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  z-index: 2100;
+}
+.nav-toggle:focus,
+.nav-toggle:hover {
+  background: var(--color-secondary);
+  outline: none;
+}
+
+/* Responsive: hide desktop menu, show hamburger and sidebar on mobile */
+@media (max-width: 900px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+    position: relative;
+  }
+  .mobile-sidebar {
+    display: flex;
+  }
 }
