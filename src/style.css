@@ -1363,9 +1363,7 @@ html {
   padding: 0;
   gap: var(--space-32);
 }
-.nav-menu-item {
-  /* for possible future styling */
-}
+
 
 /* Mobile sidebar styles */
 .mobile-sidebar {
@@ -1390,9 +1388,7 @@ html {
   flex-direction: column;
   gap: 2rem;
 }
-.mobile-sidebar li {
-  /* for spacing */
-}
+
 .mobile-sidebar .nav-link {
   font-size: 1.2rem;
   color: var(--color-text);
@@ -1452,5 +1448,22 @@ html {
     gap: var(--space-16);
     justify-content: center;   /* centers items horizontally */
     width: 100%;               /* ensures the flex row can center within its parent */
+  }
+}
+.hero-animation{
+      flex: 1;
+      display: 'flex';
+      align-items: 'center';
+      justify-content: 'center';
+      min-height: 400;
+      min-width: 400;
+      max-width: 500;
+      /* // Remove border after confirming placement
+      // border: '2px solid red' */
+    }
+@media (max-width: 768px) {
+  .hero-animation{
+    border: 5px solid red;
+    display: none;
   }
 }

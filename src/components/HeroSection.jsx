@@ -1,4 +1,6 @@
 import portfolioData from '../data';
+import Lottie from 'lottie-react';
+import heroAnimation from '../assets/hero-animation.json'; // Place your Lottie JSON here
 
 
 function HeroSection() {
@@ -35,8 +37,8 @@ function HeroSection() {
 
   return (
     <section id="hero" className="hero">
-      <div className="hero-container">
-        <div className="hero-content">
+      <div className="hero-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="hero-content" style={{ flex: 1 }}>
           <h1 className="hero-title">Hi, I'm {personalInfo.name}</h1>
           <p className="subtitle">{personalInfo.title}</p>
           <p className="bio">{personalInfo.bio}</p>
@@ -69,6 +71,13 @@ function HeroSection() {
             </a>
           </div>
         </div>
+
+        <div
+          className="hero-animation"        
+        >
+          <Lottie animationData={heroAnimation} loop={true} style={{ width: '100%', height: '100%' }} />
+        </div>
+        
       </div>
     </section>
   );
