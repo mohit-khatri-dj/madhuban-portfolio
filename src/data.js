@@ -58,9 +58,9 @@ const portfolioData = {
       location: "Jodhpur, Rajasthan",
       achievements: [
         "Designed and developed robust backend APIs for an IPTV (Internet Protocol Television) platform, focusing onsecurity, performance, and scalability to support a growing user base",
-        "Implemented token-based authentication and multi-factor OTP verification",
-        "Optimized SQL queries and data models to ensure high availability and performance",
-        "Ensured API reliability and performance through extensive testing using Postman"
+        "Built an activity scheduling form that creates, updates, and removes packages at defined execution windows, enabling reliable, automated rollouts with clear auditability",        
+        "Implemented token-based authentication and multi-factor OTP verification.",
+        "Optimized SQL queries and data models to ensure high availability and performance"
       ]
     },
   ]
