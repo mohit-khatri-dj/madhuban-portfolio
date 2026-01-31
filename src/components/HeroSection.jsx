@@ -51,7 +51,7 @@ function HeroSection() {
 
     try {
       // Call backend API
-      const response = await axios.post('http://127.0.0.1:8000/user_query', {
+      const response = await axios.post('https://api-ai-bot-rezy.onrender.com/user_query', {
           user_query: input
         });
         console.log("RESPONSE: ", response);
