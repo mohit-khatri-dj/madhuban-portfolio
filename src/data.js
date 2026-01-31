@@ -15,11 +15,10 @@ const portfolioData = {
     }
   },
   skills: {
-    frontend: ["React", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
-    backend: ["Python","ASP.net", "C#", "Django", "FastAPI", "RESTful APIs", "JWT"],
-    databases: ["MS SQL", "MySQL"],
-    tools: ["Git", "VS Code", "Jira", "Postman", "Razorpay"],
-    other: ["Microservices"]
+    frontend: ["ReactJS", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+    backend: ["Python",, "Django", "FastAPI", "RESTful APIs",, "LangChain", "RAG", "JWT", "OAuth"],
+    databases: ["MS SQL", "PostgreSQL"],
+    tools: ["Git", "Github", "Jira", "Postman", "Razorpay"]
   },
   projects: [
     {
