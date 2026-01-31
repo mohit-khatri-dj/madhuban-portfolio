@@ -3,7 +3,7 @@ const portfolioData = {
   personalInfo: {
     name: "Madhuban Khatri",
     title: "Software Engineer",
-    bio: "Passionate software engineer with 2 years of experience building scalable web applications. I specialize in Python, Django, FastAPI, React, ASP.net, C# and SQL, with a focus on creating efficient, user-friendly solutions that solve real-world problems.",
+    bio: "Passionate software engineer with 2 years of experience building scalable web applications. I specialize in Python, Django, FastAPI, React, and SQL, with a focus on creating efficient, user-friendly solutions that solve real-world problems.",
     location: "Jodhpur, Rajasthan",
     email: "madhuban211998@gmail.com",
     phone: "+91 7568170690",
