@@ -18,7 +18,8 @@ const portfolioData = {
     frontend: ["ReactJS", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
     backend: ["Python",, "Django", "FastAPI", "RESTful APIs",, "LangChain", "RAG", "JWT", "OAuth"],
     databases: ["MS SQL", "PostgreSQL"],
-    tools: ["Git", "Github", "Jira", "Postman", "Razorpay"]
+    tools: ["Git", "Github", "Jira", "Postman", "Razorpay"],
+    other: ["Microservices"]
   },
   projects: [
     {
